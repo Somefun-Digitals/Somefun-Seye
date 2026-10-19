@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  body {
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+}
+
+.font-display {
+  font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+}
+
+.font-mono-code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Subtle dot matrix background inspired by the reference website */
+.bg-dot-pattern {
+  background-image: radial-gradient(#18181b22 1.25px, transparent 1.25px);
+  background-size: 22px 22px;
+}
+
+.dark .bg-dot-pattern {
+  background-image: radial-gradient(#ffffff18 1.25px, transparent 1.25px);
+  background-size: 22px 22px;
+}
+
+/* Hard offset neo-brutalist shadows */
+.neo-shadow {
+  box-shadow: 5px 5px 0px #000000;
+}
+
+.dark .neo-shadow {
+  box-shadow: 5px 5px 0px #38bdf8;
+}
+
+.neo-shadow-yellow {
+  box-shadow: 6px 6px 0px #000000;
+}
+
+.dark .neo-shadow-yellow {
+  box-shadow: 6px 6px 0px #facc15;
+}
+
+.neo-shadow-sm {
+  box-shadow: 3px 3px 0px #000000;
+}
+
+.dark .neo-shadow-sm {
+  box-shadow: 3px 3px 0px #e2e8f0;
+}
+
+.neo-shadow-hover {
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.neo-shadow-hover:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0px #000000;
+}
+
+.dark .neo-shadow-hover:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0px #38bdf8;
+}
+
+.neo-shadow-hover:active {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0px #000000;
+}
+
+.dark .neo-shadow-hover:active {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0px #38bdf8;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: inline-flex;
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+
